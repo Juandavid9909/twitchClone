@@ -28,7 +28,7 @@ export const Logo = () => {
                 ) }>
                     <p className="text-lg font-semibold">Twitch</p>
 
-                    <p className="text-xs text-muted-foreground">Let&apos;s play</p>
+                    <p className="text-xs text-muted-foreground">Creator dashboard</p>
                 </div>
             </div>
         </Link>
