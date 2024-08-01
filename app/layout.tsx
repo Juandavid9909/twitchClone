@@ -1,6 +1,7 @@
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 import { Inter } from "next/font/google";
+import { Toaster } from "sonner";
 import type { Metadata } from "next";
 
 import { ThemeProvider } from "@/components/theme-provider";
@@ -28,6 +29,8 @@ export default function RootLayout({
             forcedTheme="dark"
             storageKey="gamehub-theme"
           >
+            <Toaster theme="light" position="bottom-center" />
+
             { children }
           </ThemeProvider>
         </body>
