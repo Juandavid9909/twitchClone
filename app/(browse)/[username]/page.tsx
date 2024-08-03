@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 
 import { Actions } from "./_components/actions";
-import { getUserByUsername } from "@/app/user-service";
+import { getUserByUsername } from "@/lib/user-service";
 import { isBlockedByUser } from "@/lib/block-service";
 import { isFollowingUser } from '@/lib/follow-service';
 
