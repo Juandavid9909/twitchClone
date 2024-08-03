@@ -1,11 +1,13 @@
 "use client";
 
-import { User } from "@prisma/client";
+import { Stream, User } from "@prisma/client";
 import { UserItem, UserItemSkeleton } from "./user-item";
 import { useSidebar } from "@/store/use-sidebar";
 
 interface RecommendedProps {
-    data: User[];
+    data: (User & {
+        stream: Stream | null;
+    })[];
 }
 
 export const Recommended = ({ data }: RecommendedProps) => {
@@ -27,7 +29,7 @@ export const Recommended = ({ data }: RecommendedProps) => {
                         key={ user.id }
                         username={ user.username }
                         imageUrl={ user.imageUrl }
-                        isLive={ false }
+                        isLive={ user.stream?.isLive }
                     />
                 )) }
             </ul>
