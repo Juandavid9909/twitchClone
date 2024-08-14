@@ -43,7 +43,8 @@ export const resetIngresses = async (hostIdentity: string) => {
 }
 
 export const createIngress = async (ingressType: IngressInput) => {
-    const self = await getSelf();
+    try {
+        const self = await getSelf();
 
     await resetIngresses(self.id);
 
@@ -95,4 +96,8 @@ export const createIngress = async (ingressType: IngressInput) => {
     revalidatePath(`/u/${ self.username }/keys`);
 
     return JSON.stringify(ingress);
+    }
+    catch(error) {
+        console.log(error);
+    }
 }
